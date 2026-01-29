@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html class="page" lang="ru" data-validate="html">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MENU</title>
+  <meta name="description" content="навигационное меню с несколькимии уровнями вложенности">
+
+  <link rel="icon" href="./favicon.ico">
+  <link rel="stylesheet" href="./sass/style.scss">
+
+</head>
+
+<body>
+  <header class="header">
+    <nav class="site-nav" aria-label="Сайт">
+      <ul class="menu">
+        <li class="menu__item" data-has-children>
+          <button class="menu__btn" aria-expanded="false" aria-controls="doka-submenu"> Дока </button>
+
+          <!-- Первый уровень вложенности -->
+          <ul class="menu menu-submenu" id="doka-submenu">
+            <li class="menu__item">
+              <a href="#" class="menu__link" aria-current="page"> Рецепты </a>
+            <li>
+
+            <li class="menu__item" data-has-children>
+              <button class="menu__btn" aria-expanded="false" aria-controls="html-submenu"> HTML </button>
+
+              <!-- Второй уровень вложенности -->
+              <ul class="menu menu-submenu" id="html-submenu">
+                <li class="menu__item">
+                  <a href="#" class="menu__link"> Основы </a>
+                </li>
+
+                <li class="menu__item">
+                  <a href="#" class="menu__link"> Форматирование </a>
+                </li>
+
+                <li class="menu__item">
+                  <a href="#" class="menu__link"> Семантика </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="menu__item" data-has-children>
+              <button class="menu__btn" aria-expanded="false" aria-controls="css-submenu"> CSS </button>
+
+              <!-- Второй уровень вложенности -->
+              <ul class="menu menu-submenu" id="css-submenu">
+                <li class="menu__item">
+                  <a href="#" class="menu__link"> Главное </a>
+                </li>
+
+                <li class="menu__item">
+                  <a href="#" class="menu__link"> Селекторы </a>
+                </li>
+
+                <li class="menu__item">
+                  <a href="#" class="menu__link"> Псевдоклассы </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="menu__item">
+              <a href="#" class="menu__link"> JavaScript </a>
+            </li>
+
+            <li class="menu__item">
+              <a href="#" class="menu__link"> Доступность </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="menu__item">
+          <a href="#" class="menu__link"> Новости </a>
+        </li>
+
+        <li class="menu__item">
+          <a href="#" class="menu__link"> Блог </a>
+        </li>
+
+        <li class="menu__item">
+          <a href="#" class="menu__link"> Архив </a>
+        </li>
+      </ul>
+    </nav>
+
+  </header>
+<main>
+      <button> просто кнопка</button>
+</main>
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
