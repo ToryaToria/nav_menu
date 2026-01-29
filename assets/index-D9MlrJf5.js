@@ -1,0 +1,11 @@
+(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))i(t);new MutationObserver(t=>{for(const o of t)if(o.type==="childList")for(const c of o.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&i(c)}).observe(document,{childList:!0,subtree:!0});function r(t){const o={};return t.integrity&&(o.integrity=t.integrity),t.referrerPolicy&&(o.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?o.credentials="include":t.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function i(t){if(t.ep)return;t.ep=!0;const o=r(t);fetch(t.href,o)}})();const s=document.querySelector(".site-nav");s.classList.add("enhanced");const l=s.querySelectorAll(".menu__item[data-has-children]"),d=s.querySelectorAll(".menu__item[data-has-children] > .menu"),f=`
+  <svg
+    width="24px"
+    height="24px"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    class="menu__btn-icon"
+  >
+  <path fill="currentColor" d="M5.64645 8.64645c.19526-.19527.51184-.19527.7071 0L12 14.2929l5.6464-5.64645c.1953-.19527.5119-.19527.7072 0 .1952.19526.1952.51184 0 .7071L12 15.7071 5.64645 9.35355c-.19527-.19526-.19527-.51184 0-.7071Z"></path>
+  </svg>
+`;l.forEach(n=>{const e=n.querySelector(":scope > .menu");e.setAttribute("hidden","");const r=n.querySelector(":scope > .menu__btn");r.innerHTML+=f,r.addEventListener("click",function(i){a(r,e)}),e.addEventListener("keydown",i=>{i.stopImmediatePropagation(),i.key==="Escape"&&u(e)&&(a(r,e),r.focus())},!0)});function a(n,e){n.getAttribute("aria-expanded")==="true"?(n.setAttribute("aria-expanded","false"),e.setAttribute("hidden","")):(n.setAttribute("aria-expanded","true"),e.removeAttribute("hidden"))}function u(n){return n.contains(document.activeElement)}function p(n){n.keyCode===9&&!u(s)&&(console.log("за её пределы"),d.forEach(function(e){e.setAttribute("hidden",""),e.parentNode.querySelector("button").setAttribute("aria-expanded","false")}))}function h(n){const e=n.target;d.forEach(function(r){r.parentNode.contains(e)||(r.setAttribute("hidden",""),r.parentNode.querySelector("button").setAttribute("aria-expanded","false"))})}document.addEventListener("keyup",p);window.addEventListener("click",h);
